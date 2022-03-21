@@ -1,0 +1,19 @@
+<!-- spielhintergrund -->
+<div class="gameField">
+
+
+    <!-- kartenstapel -->
+    <div class="cardStack">
+        <!-- v.4 karten versetzt anzeigen ngFor -->
+        <!-- v.4 right i abstand nach rechts -->
+        <img *ngFor="let card of[0,1,2,3]; let i =index;" [ngStyle]="{'right.px':i *5}" src="/assets/img/cards/card_cover.png" alt="">
+        <!-- v5 oberste Karte animieren -->
+        <img (click)="takeCard()" class="topCard" style="right: 25px" src="/assets/img/cards/card_cover.png">
+        <!-- v6 karte beim anklicken anzeigen  -->
+        <img (click)="takeCard()" *ngIf="pickCardAnimation " class="pickCard" style="right: 25px" src="/assets/img/cards{{currentCard}}.png">
+
+    </div>
+
+
+
+</div>
