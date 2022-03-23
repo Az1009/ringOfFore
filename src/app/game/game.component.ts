@@ -24,17 +24,25 @@ currentCard: string = '';
   newGame() {
     //v7. 4. neues json objekt wird erstellt
     this.game= new Game();
-    console.log(this.game)
+    //console.log(this.game)
 
   }
 
   // karte auswählen
   takeCard(){
+    if (!this.pickCardAnimation){
     //v8 2. pop gibt den letzten wert aus dem array wieder und entfernt es vom stapel
     this.currentCard = this.game.stack.pop();  
-      console.log(this.currentCard)
+     // console.log(this.currentCard)
     this.pickCardAnimation =true;
+    this.game.playedCards.push(this.currentCard);
+    console.log('game is', this.game);
 
-  }
+    setTimeout(()=>{
+      this.pickCardAnimation= false;
+
+    },1500);
+
+  }}
 
 }
