@@ -1,7 +1,7 @@
 
 export class Game{
 // v7 1.onjekte die gespeichert werden
-public players: string[] = [];
+public players: string[] = ['Hans', 'Peter', 'Wolf'];
 public stack: string[] = [];
 public playedCards: string[] = [];
 public currentPlayer: number = 0;
@@ -14,8 +14,8 @@ constructor(){
 
         this.stack.push('ace_'+i);
         this.stack.push('clubs_'+i);
-        this.stack.push('diamonds'+i);
-        this.stack.push('hearts'+i);
+        this.stack.push('diamonds_'+i);
+        this.stack.push('hearts_'+i);
     }
     shuffle(this.stack);
 }

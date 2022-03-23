@@ -1,3 +1,8 @@
+<!-- v10 spielerleiste einbinden -->
+<!-- mit ngfor erstellen wir weitere Spieler -->
+<app-player *ngFor="let player of game.players; let i = index;" [ngStyle]="{'top.px': 100+ (i *120)}" class="playerPosition"></app-player>
+<!-- v11. input variable w. player.c.ts um den Spielernamen hinzuzufügen -->
+[name]= "player";
 <!-- spielhintergrund -->
 <div class="gameField">
 
@@ -6,17 +11,15 @@
     <div class="cardStack">
         <!-- v.4 karten versetzt anzeigen ngFor -->
         <!-- v.4 right i abstand nach rechts -->
-        <img *ngFor="let c of[0,1,2,3]; let i = index;" [ngStyle]="{'right.px':i*5}" src="./assets/img/cards/card_cover.png" alt="">
+        <img *ngFor="let c of[0,1,2,3]; let i = index;" src="/assets/img/cards/card_cover.png" alt="">
         <!-- v5 oberste Karte animieren -->
-        <img (click)="takeCard()" class="topCard" style="right: 25px" src="./assets/img/cards/card_cover.png" alt="">
-        <!-- v6 karte beim anklicken anzeigen  -->
-        <img (click)="takeCard()" *ngIf="pickCardAnimation " class="pickCard" style="right: 25px" src="./assets/img/cards/{{currentCard}}.png">
+        <img (click)="takeCard()" class="topCard" style="right: 25px" src="/assets/img/cards/card_cover.png" alt="">
 
         <!-- gespielt jarte anzeigen -->
         <!-- classe um die gepielte karten zu animieren -->
-        <img *ngFor="let card of game.playedCards" class="playedCard" src="./assets/img/cards/{{card}}.png">
+        <img *ngFor="let card of game.playedCards" class="playedCard" src="./assets/img/cards/{{card}}.png" alt="">
+        <!-- v6 karte beim anklicken anzeigen  -->
+        <img (click)="takeCard()" *ngIf="pickCardAnimation " class="pickCard" style="right: 25px" src="/assets/img/cards/{{currentCard}}.png">
     </div>
-
-
 
 </div>

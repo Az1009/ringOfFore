@@ -35,13 +35,16 @@ currentCard: string = '';
     this.currentCard = this.game.stack.pop();  
      // console.log(this.currentCard)
     this.pickCardAnimation =true;
-    this.game.playedCards.push(this.currentCard);
+    console.log('new card', this.currentCard);
+
     console.log('game is', this.game);
 
     setTimeout(()=>{
+      this.game.playedCards.push(this.currentCard);
+
       this.pickCardAnimation= false;
 
-    },1500);
+    },1000);
 
   }}
 
