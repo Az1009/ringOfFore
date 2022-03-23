@@ -11,7 +11,8 @@ export class GameComponent implements OnInit {
 //v8 1. variable um die gezogene Karte anzuzeigen
 currentCard: string = ''; 
  //v7 3.
-  game: Game ;
+  //v7 3.
+  game: Game;
 
   constructor() { }
 

@@ -1,14 +1,10 @@
 
 export class Game{
-// v7 1.objekte die gespeichert werden
-public players: string[]= [];
-    public stack: string[] = [];
-
-    public profileImages: string[] = [];
-    public playedCard: string[] = [];
-    public currentPlayer:number= 0;
-    public pickCardAnimation =false;
-  public currentCard:string= '';
+// v7 1.onjekte die gespeichert werden
+public players: string[] = [];
+public stack: string[] = [];
+public playedCards: string[] = [];
+public currentPlayer: number = 0;
 
 
 // v7 
