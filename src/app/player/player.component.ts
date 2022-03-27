@@ -7,14 +7,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
   //v11. input variable
-@input() name;
+@Input() name;
+//v16 aktiver spieler
+@Input() playerActive: boolean= false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
 }
-function input() {
-  throw new Error('Function not implemented.');
-}
+//function input() {
+//  throw new Error('Function not implemented.');
+//}
 

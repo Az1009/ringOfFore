@@ -1,7 +1,7 @@
 
 export class Game{
 // v7 1.onjekte die gespeichert werden
-public players: string[] = ['Hans', 'Peter', 'Wolf'];
+public players: string[] = [];
 public stack: string[] = [];
 public playedCards: string[] = [];
 public currentPlayer: number = 0;

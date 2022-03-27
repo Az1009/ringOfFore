@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from 'src/models/game';
+import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
+
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-game',
@@ -14,7 +17,7 @@ currentCard: string = '';
   //v7 3.
   game: Game;
 
-  constructor() { }
+  constructor(public dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.newGame();
@@ -46,6 +49,18 @@ currentCard: string = '';
 
     },1000);
 
-  }}
+  }
 
+}
+
+// aus AngularMAterial Dialogfenster
+openDialog(): void {
+  const dialogRef = this.dialog.open(DialogAddPlayerComponent) ;
+    
+/* spielerNamen hinzufügen */
+dialogRef.afterClosed().subscribe((name: string) => {
+  if(name && name.length > 0){
+this.game.players.push(name); 
+} });
+}
 }
