@@ -10,5 +10,6 @@
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()">No Thanks</button>
+    <!-- button disabled, wenn kein name drinsteht -->
     <button mat-button [disabled]="name.length == 0" [mat-dialog-close]="name" focusInitial>ok</button>
 </div>

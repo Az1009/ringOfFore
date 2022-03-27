@@ -4,12 +4,15 @@
 
     <!-- wenn die variable card existiert wird der Tiel angezeigt. ansonsten Textausgabe.kurzform if else abfrage -->
     <mat-card-title>
-        {{title}}
+        <!-- wenn die Karte nicht existiert standarttext anzeigen kurzform if else card? dann titel anzeigen ansonsten den string -->
+        {{card? title: 'Please pick a card'}}
     </mat-card-title>
 
 
     <mat-card-content>
         <!-- v18 beschreibung -->
-        {{description}}
+        <!-- wenn die Karte nicht existiert standarttext anzeigen kurzform if else card? dann titel anzeigen ansonsten den string -->
+
+        {{card ? description: 'please click on the card stack to select a card'}}
     </mat-card-content>
 </mat-card>

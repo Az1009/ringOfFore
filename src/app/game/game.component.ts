@@ -42,6 +42,11 @@ currentCard: string = '';
 
     console.log('game is', this.game);
 
+    // v19 1. nächsten spieler makieren
+    this.game.currentPlayer++;
+    // v19 2.damit spieler nicht auslaufen aus dem bild
+    this.game.currentPlayer= this.game.currentPlayer % this.game.players.length;
+
     setTimeout(()=>{
       this.game.playedCards.push(this.currentCard);
 
@@ -61,6 +66,7 @@ openDialog(): void {
 dialogRef.afterClosed().subscribe((name: string) => {
   if(name && name.length > 0){
 this.game.players.push(name); 
-} });
+} 
+});
 }
 }
